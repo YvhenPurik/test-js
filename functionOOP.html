@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+
+	function User(name, id) {
+
+			  this.name = name;
+			  this.id = id;
+			  this.avatar = 'Photo'
+			}
+
+	User.prototype.delitAvatar = function() { //так все норм
+              	this.avatar = null;
+              	
+              }
+	User.prototype.setAvatar = function(photo) { //так все норм
+		this.avatar = photo;
+		
+	};
+  Admin.prototype = Object.create(User.prototype)
+
+
+	function Admin(name, id) {
+
+			  this.name = name;
+			  this.id = id;
+			  this.avatar = 'Photo'
+			  this.role = 'Admin'
+		}
+
+
+     Admin.prototype.setId = function(Id) { //так все норм
+		this.id = Id;
+		console.log('I am boss')
+	};
+
+// Наследуем Aдмина от Юзера
+
+var vasya = new User("Вася", 30);
+var lena = new User("Лена", 32); // создали пользователя передали ему имя и ид
+
+var adm = new Admin("Admin", 1);
+adm.delitAvatar()
+adm.setId(5)
+
+
+lena.delitAvatar() //удалили аватар у лены (не сработало со стрелочной функцией)
+vasya.setAvatar("My Photo vasya") //установили аватар Васе (не сработало со стрелочной функцией)
+
+console.log(vasya);
+console.log(adm);
+console.log(lena); // пользователь 
+	</script>
+</body>
+</html>

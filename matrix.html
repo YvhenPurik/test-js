@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+
+  // этот пример выводить цыфры матрици под главной диагональю с лева на прво главная диагональ
+
+
+	       let matrix = [
+            [1,2,13,6],
+            [2,24,5,11],
+            [5,7,44,3],
+            [17,8,-13,5]
+          ];
+
+          for(let i = 1; i < matrix.length; i++){
+              for(let j = 0; j < i; j++){
+                 console.log(matrix[i][j])
+              }
+          }
+
+
+
+          //и рещение 2 через фор ич
+            let matrix2 = [
+            [1,2,13,6],
+            [2,24,5,11],
+            [5,7,44,3],
+            [17,8,-13,5]
+          ];
+
+
+          matrix2.forEach(function(row, outerIndex) {
+                  row.forEach(function(num, innerIndex) {
+                    if(innerIndex < outerIndex){
+                        console.log(num)
+                    }else{
+                    	return;
+                    }
+               })
+          })
+
+	</script>
+</body>
+</html>

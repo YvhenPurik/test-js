@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+
+	class User {
+		constructor(name, id){
+			  this.name = name;
+			  this.id = id;
+			  this.avatar = 'Photo'
+		}
+		delitAvatar(){
+			this.avatar = null;
+		}
+	}
+   class Admin extends User{
+        constructor(name, id){
+        	super(name, id)
+        	  this.role = "admin";    
+        	}
+	    	
+	     setId(id){
+           this.id = id;
+	      }
+	    
+	    }
+    let vasya = new User("Вася", 30);
+    let lena = new User("Лена", 32);
+    let adm = new Admin("Admin", 15);
+
+    adm.setId(4)
+    vasya.delitAvatar()
+
+    console.log(vasya);
+    console.log(lena);
+    console.log(adm);
+	</script>
+</body>
+</html>
