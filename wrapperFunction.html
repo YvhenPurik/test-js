@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Document</title>
+</head>
+
+<body>
+  <button id="btn">clik</button>
+
+  <script type="text/javascript">
+    //функция врапер которая ограничила количество кликов по кнопке через замыкание
+
+    const limit = (count, fn) => {
+      let counter = 0;
+      return (...args) => {
+        if (counter === count) return;
+        counter++;
+        return fn(...args);
+      };
+    };
+
+    const fn = par => {
+      console.log('called, par:', par);
+    };
+
+    const fn2 = limit(2, fn);
+
+    addEventListener('click', fn2);
+  </script>
+</body>
+
+</html>
