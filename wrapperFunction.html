@@ -17,6 +17,7 @@
       return (...args) => {
         if (counter === count) return;
         counter++;
+
         return fn(...args);
       };
     };
@@ -25,9 +26,9 @@
       console.log('called, par:', par);
     };
 
-    const fn2 = limit(2, fn);
+    const fn2 = limit(5, fn);
+    document.getElementById('btn').addEventListener('click', fn2);
 
-    addEventListener('click', fn2);
   </script>
 </body>
 
