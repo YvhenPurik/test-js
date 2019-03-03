@@ -7,23 +7,85 @@
 </head>
 
 
-<body>
-  <button></button>
 
+<body>
+
+  <style>
+    canvas {
+      margin: 0 auto;
+      border: 1px solid grey
+    }
+  </style>
+  <button id="red">red</button>
+  <button id="green">green</button>
+
+  <button id="purpule">purpule</button>
+  <button id="black">black</button>
+  <canvas width="1200" height="400" id="canvas"></canvas>
 
 </body>
 
 <script type="text/javascript">
 
-  let foo = (e) => {
+  var canvas = document.getElementById("canvas");
+  var ctx = canvas.getContext("2d");
+
+  let redBtn = document.getElementById("red");
+  let greenBtn = document.getElementById("green");
+  let blackBtn = document.getElementById("black");
+  let purpuleBtn = document.getElementById("purpule");
+
+
+
+
+
+
+  let startDrow = (e) => {
+
+    window.addEventListener('mousemove', Drow);
+
+  }
+
+  let stopDrow = (e) => {
+    window.removeEventListener('mousemove', Drow);
+  }
+
+
+
+  let Drow = (e) => {
+
+    var endAngle = Math.PI + (Math.PI) / 2; // End point on circle
     x = e.pageX;
     y = e.pageY;
+    ctx.beginPath();
+    ctx.arc(x - 200, y, 20, endAngle, 100, 100);
+    ctx.fill();
 
-    console.log('----X---->', x, '-----Y--->', y)
+
+
+    var endAngle = Math.PI + (Math.PI) / 2;
+    redBtn.addEventListener('click', () => {
+      ctx.fillStyle = "red";
+    });
+    greenBtn.addEventListener('click', () => {
+      ctx.fillStyle = "green";
+    })
+    blackBtn.addEventListener('click', () => {
+      ctx.fillStyle = "black";
+    });
+    purpuleBtn.addEventListener('click', () => {
+      ctx.fillStyle = "purple";
+    })
+
 
 
   }
-  window.addEventListener('mousemove', foo);
+
+
+
+  window.addEventListener('mousedown', startDrow);
+  window.addEventListener('mouseup', stopDrow);
+
 
 
 </script>
