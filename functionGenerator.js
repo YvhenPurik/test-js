@@ -15,5 +15,5 @@ var gen = range(20, 3), info;
 while (!(info = gen.next()).done) {
   console.log(info.value);
 }
-
+console.log("steps taken: " + info);
 console.log("steps taken: " + info.value);
