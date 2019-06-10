@@ -17,3 +17,6 @@ while (!(info = gen.next()).done) {
 }
 console.log("steps taken: " + info);
 console.log("steps taken: " + info.value);
+
+console.log("steps taken: " + info);
+console.log("steps taken: " + info.value);
