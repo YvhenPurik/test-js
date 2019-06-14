@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+	 
+		 let gift = new Promise((res, rej)=>{
+			
+			let win = Math.random().toFixed(1) 
+               if(win > 0.5){
+               	res("win")
+               }else{
+               	rej("lose")
+               }  
+           
+               
+		 })
+		
+		
+		
+     const byTiket = ()=>{
+     	gift
+     	 .then(result => console.log(result))
+     	 .catch(err => console.log(err))
+     }
+
+     byTiket()
+	</script>
+</body>
+</html>
