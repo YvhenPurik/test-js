@@ -22,6 +22,16 @@ cat.__proto__ = animal
 cat.getVoice()
 console.log(cat.head)
 
+
+
+// Передача обекта по ссылке
+
+let a = {x: 10}
+let b = {x: 20}
+a = b
+b.x = 15
+console.log(a.x)
+
 	</script>
 </body>
 </html>

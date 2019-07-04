@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+
+<body id="body">
+
+	<script type="text/javascript">
+		var counterModule = (function () {
+
+			var counter = 0,
+			instance;
+
+           var getCounter = function () {
+           	return counter;
+           }
+
+           var increasesCounter = function () {
+           	counter++
+           }
+
+           var createInstance = function () {
+          	return {
+          		getCounter:getCounter,
+          		increasesCounter:increasesCounter
+          	}
+          }
+
+          return{
+          	 getInstance: function () {
+              return instance || (instance = createInstance())
+           } 
+          }
+
+		}())
+    console.log(counterModule.getInstance())
+    console.log(counterModule.getInstance().getCounter()) 
+    console.log(counterModule.getInstance().increasesCounter())
+    console.log(counterModule.getInstance().increasesCounter()) 
+    console.log(counterModule.getInstance().increasesCounter()) 
+    console.log(counterModule.getInstance().increasesCounter())  
+    console.log(counterModule.getInstance().getCounter())
+
+// вызываем синглтон еще раз и получаем значение счетчика осталось прежним.
+    console.log(counterModule.getInstance())
+    console.log(counterModule.getInstance().getCounter())
+	</script>
