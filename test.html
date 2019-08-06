@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+let data =[
+  {
+    addClassCell: {},
+    created: "2019-07-30T11:43:41.897864Z",
+    extCell: {},
+    id: 1,
+    machine_tool: 21,
+    modified: "2019-07-30T14:33:19.696435Z",
+    week_day: 4,
+    work_time: 7,
+  },
+  {
+    addClassCell: {},
+    created: "2019-07-30T11:43:41.897864Z",
+    extCell: {},
+    id: 1,
+    machine_tool: 21,
+    modified: "2019-07-30T14:33:19.696435Z",
+    week_day: 2,
+    work_time: 7,
+  }
+]
+
+let newData = []
+
+for (let i = 1; i <= 7; i++) {
+ newData.push(data.find(x=>x.week_day === i) || {id:0, created:'', modified:'', work_time:0, machine_tool: 21})
+}
+
+console.log(newData)
+</script>
+</body>
+</html>
