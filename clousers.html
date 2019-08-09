@@ -6,12 +6,23 @@
 <body>
 <script type="text/javascript">
 
-let add =(x)=>{
-    return (y)=>{
-        return x + y
+let add =(x) =>{
+    if(x == mult){
+        return (a)=>{
+            return (b) =>{
+              return a * b
+            }
+          }
+       }if(x == plus){
+           return  (a)=>{
+                return  (b) =>{
+                  return a + b
+            }
+        }
     }
 }
-console.log(add(6)(2))
+
+console.log(Math.pow(2,53))
 </script>
 </body>
 </html>
