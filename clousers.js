@@ -15,7 +15,7 @@ for (var i = 0; i < 10; i++) {
     (function(index){
         setTimeout(function () {
             console.log(index); // 1 ?
-        }, i * 1120);
+        }, i);
     })(i)
 }
 
