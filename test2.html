@@ -7,16 +7,33 @@
    <div id="article"></div>
   
 <script type="text/javascript">
-let words =["The", "quick", "brown", "sdf", "jumped", "over"]
 
-let arr = [1, 2, 3]
-arr.forEach((el)=>{
-  el += 2
-})
-console.log(arr)
+  
 
 
+var ary = ['kevin', 'mike', 'sally', 'adfadf', 'asdsfdf3eq23', '545454'];
+let i = 0;
+let Interval
+let ArrIntervalIterator = (arr)=>{
+ 
+  
+  Interval =  setInterval(function(){
+    console.log(ary[i]);
+    
+    
+    if(i < ary.length -1){
+      i++
+    }else{
+      return clearInterval(Interval)
+    }
+    
+},1000);
 
+
+  // clearInterval(Interval)
+}
+
+ArrIntervalIterator(ary)
 </script>
 </body>
 </html>

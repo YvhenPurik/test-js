@@ -7,91 +7,29 @@
    <div id="article"></div>
   
 <script type="text/javascript">
-// Контекст.
-// Ниже описан код файла с компонентами. 
-// В конечном рабочем варианте ожидается, что у пользователя на экране будет кнопка "Инкрементировать" и количество раз, когда на нее нажали, а также список из случайных целочисленных элементов от 0 до 100, количество которых равно количеству инкрементаций. В коде есть ошибки из-за которых представление не будет работать так, как ожидалось.
-// Представленный код имеет пропущенные участки кода и ошибки. Необходимо реализовать компонент генерации случайных чисел RandomList. 
-
-// Задача.
-// 1. Дописать недостающий код, чтобы получить конечный рабочий вариант.
-// 2. Реализовать авто-инкрементирование счетчика каждые 3 секунды. Использование setInterval запрещено.
-
-// Дополнительно.
-// Решать задачу необходимо прямо тут. Поисковые системы использовать не нужно. Отлаживать не нужно. Какие-то мелкие ошибки и опечатки не учитываются.
-// На задание у вас есть 15 минут.
-
-// -----
-
-import React, { Component } from "react";
-import { render } from "react-dom";
-
-class Counter extends Component {
-  constructor(props) {
-    super(props);
-  }
+let i = 0;
+let Interval
+let AddNumbForSingle =(n)=>{
+ 
+  Interval =  setInterval(function(){
+    console.log(n)
+    
+    
+    if(n != 1){
+      i++
+      return n + AddNumbForSingle(n - 1)
+    }else{
+      
+      return 1 && clearInterval(Interval)
+    }
+    
+},1000);
+  // if(n == 1)return 1
   
-  render() {
-    return <span>{this.props.counter}</span>;
-  }
 }
 
-class RandomList extends Component {
-  constructor(props) {
-    super(props);
-  }
-
-   generateNumbers() {
-   
-     // return randrom ints [0-100]
-  function randomInteger(min, max) {
-  // получить случайное число от (min-0.5) до (max+0.5)
-  let rand = min - 0.5 + Math.random() * (max - min + 1);
-  return Math.round(rand)
-}
-let randInt = randomInteger(1, 100)
-let arr = []
-this.props.count
-let addArrint = () =>{
-   if(this.props.count !=1){
-    return arr.push(randomInteger(1, 100))
-}
-}
-     // for example if count = 5, it could return [1, 7, 55, 31, 81]  а понял
-  }
-  
-  // should return <ul><li>1</li><li>7</li><li>55</li><li>31</li><li>81</li></ul>
-  render() {
-    this.generateNumbers().reduce?
-  }
-}
-
-class ParentComponent extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      counter: 0
-    };
-  }
-
-  inc = () => {
-   this.setState({counter+=1})
-  };
-
-  render() {
-    return (
-      <div>
-        <button onClick={this.inc}>Инкрементировать</button>
-        <Counter counter={this.state.counter} />
-        <RandomList count={this.state.counter}  />
-      </div>
-    );
-  }
-}
-
-render(<ParentComponent />, document.getElementById("root"));
-
-
-
+console.log(AddNumbForSingle(5))
+// O(5)
 
 </script>
 </body>
