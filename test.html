@@ -1,27 +1,29 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<title></title>
+  <title></title>
 </head>
+
 <body>
 
-  
-<script type="text/javascript">
-let memo = (fn)=>{
-    let cache = {}
-    return (n)=>{
-      if(n in cache){
-        return cache[n]
-      }
-      return cache[n] = fn(n)
+
+  <script type="text/javascript">
+    let obj = {
+      cat: '111',
+      dog: '222'
     }
-}
- let factorial = memo((x) =>{
-    console.log('loop fact ev', x)
-    return x != 1 ? x * factorial(x -1) : x;
-  })
-  console.log(factorial(10))
-  console.log(factorial(10))
-</script>
+    let ano = Object.create(obj)
+    ano.ttt = '123'
+    ano.bbb = '321'
+    for (var key in ano) {
+      if (ano.hasOwnProperty(key)) {
+        console.log(key + " = " + ano[key]);
+      }
+
+    }
+
+  </script>
 </body>
+
 </html>
