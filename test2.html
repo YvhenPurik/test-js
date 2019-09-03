@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title></title>
+</head>
+
+<body>
+
+
+  <script type="text/javascript">
+
+    let emploey1 = {
+      name: 'Yvhen Purik',
+      position: 'junior frontend',
+      salary: 800
+    }
+    let emploey2 = {
+      name: 'john',
+      position: 'desiger',
+      salary: 700
+    }
+
+    function promote(NewPosition, newSalary) {
+      this.position = NewPosition
+      this.salary += newSalary
+      return this.name + 'is' + this.position + 'and earns' + this.salary
+    }
+    promote.apply(emploey1, ['middle frontend', 1000])
+    promoteEvhen = promote.bind(emploey1)
+    promoteEvhen('senior frontend', 2200)
+    console.log(emploey1)
+  </script>
+</body>
+
+</html>

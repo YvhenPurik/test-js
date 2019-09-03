@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+
+<body>
+  <script type="text/javascript">
+
+    //Алгоритм Евклида — это алгоритм нахождения наибольшего общего делителя (НОД) пары целых чисел.
+    // function nod(x, y, z) {
+    //   while (z !== 0) {
+    //     z = x % (x = z)
+    //   }
+    //   return (x) => {
+    //     while (y !== 0) {
+    //       y = x % (x = y)
+    //     }
+    //     return x
+    //   }
+    // }
+    // console.log(nod(680, 612, 250))
+
+
+    const nod2 = (x, y, z) => x !== 0 ? nod(y % x % z, x) : y;
+    console.log(nod2(680, 612, 250)); // = 5
+  </script>
+</body>
+
+</html>
