@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+  <div id="article"></div>
+<script type="text/javascript">
+
+let art = document.getElementById("article");
+console.log(art)
+let x;
+
+let get = (url, callback)=>{
+     var xhr = new XMLHttpRequest()
+    xhr.open(
+      'GET',
+      url,
+      true
+    )
+    xhr.timeout = 4000;
+    xhr.ontimeout = function () { }
+    xhr.send()
+
+   
+
+xhr.onreadystatechange = function() {
+  setTimeout(function () {     /* vs. a.timeout */
+    if (xhr.readyState != 4) {
+    return
+  }
+
+  if (xhr.status === 200) {
+     callback( JSON.parse(xhr.responseText))
+  } else {
+    console.log('err', xhr.responseText)
+  }
+    }, 2000);
+  
+  }
+}
+
+get('https://jsonplaceholder.typicode.com/users/1/posts', (data)=>{showX(data)})
+
+let showX = (x) =>{
+  let res = x.map((el)=>{
+      return `<div id=${el.id}><p>${el.title}</p></div>`
+  })
+  art.innerHTML += res;
+  console.log(x)
+}
+
+
+</script>
+</body>
+</html>
