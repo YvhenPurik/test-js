@@ -1,39 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<title>Document</title>
+  <meta charset="UTF-8">
+  <title>Document</title>
 </head>
+
 <body>
-	<script type="text/javascript">
-	 
-let animal = {
-  head: true
-}
+  <script type="text/javascript">
 
-let cat ={
-  getVoice: ()=>{
-    console.log('MAY')
-  }
-}
-cat.__proto__ = animal
+    let animal = {
+      head: true
+    }
 
 
-// cat.prototype = Object.create(animal.prototype)
-// cat.head
-cat.getVoice()
-console.log(cat.head)
+    let cat = {
+      getVoice: () => {
+        console.log('MAY')
+      }
+    }
+    cat.__proto__ = animal
+
+
+    // cat.prototype = Object.create(animal.prototype)
+    // cat.head
+    cat.getVoice()
+    console.log(cat.head)
 
 
 
-// Передача обекта по ссылке
+    // Передача обекта по ссылке
 
-let a = {x: 10}
-let b = {x: 20}
-a = b
-b.x = 15
-console.log(a.x)
+    let a = { x: 10 }
+    let b = { x: 20 }
+    a = b
+    b.x = 15
+    console.log(a.x)
 
-	</script>
+  </script>
 </body>
+
 </html>
