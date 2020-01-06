@@ -1,25 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Document</title>
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+  </head>
 
-	<script type="text/javascript">
-		
-  const obj = {
-  	t1: "1",
-  	t2: "2",
-  	t3: "3",
-  	t4: "4",
-  	t5: "5"
-  }
+  <script type="text/javascript">
+    const curry = fn => (...args) =>
+      fn.length > args.length
+        ? curry(((fn, ...args1) => (...args2) => fn(...args1.concat(args2)))(fn, ...args))
+        : fn(...args);
 
- const arr = [12, 33, 55, 77, 44]
+    // Usage
 
+    const sum4 = (a, b, c, d) => a + b + c + d;
 
-  for(key in obj){
-  	console.log(key + ":" + obj[key])
-  }
-</script>
-	
+    const f = curry(sum4);
+    const y1 = sum4(1, 2, 3, 4);
+    const y2 = f(1, 2, 3, 4);
+    const y3 = f(1, 2, 3)(4);
+    //const y4 = f(1, 2)(3)(4);
+    //const y5 = f(1)(2)(3)(4);
+    const y6 = f(1)(2, 3, 4);
+    //const y7 = f(1)(2)(3, 4);
+    const y8 = f(1, 2)(3, 4);
+    console.log(y3);
+  </script>
+</html>
