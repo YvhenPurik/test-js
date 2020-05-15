@@ -1,27 +1,26 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title></title>
-</head>
-<body>
-
-  
-<script type="text/javascript">
-let memo = (fn)=>{
-    let cache = {}
-    return (n)=>{
-      if(n in cache){
-        return cache[n]
-      }
-      return cache[n] = fn(n)
-    }
-}
- let factorial = memo((x) =>{
-    console.log('loop fact ev', x)
-    return x != 1 ? x * factorial(x -1) : x;
-  })
-  console.log(factorial(10))
-  console.log(factorial(10))
-</script>
-</body>
+  <head>
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      let memo = (fn) => {
+        let cache = {};
+        return (n) => {
+          if (n in cache) {
+            return cache[n];
+          }
+          return (cache[n] = fn(n));
+        };
+      };
+      // memo func
+      let factorial = memo((x) => {
+        console.log('loop fact ev', x);
+        return x != 1 ? x * factorial(x - 1) : x;
+      });
+      console.log(factorial(10));
+      console.log(factorial(10));
+    </script>
+  </body>
 </html>
