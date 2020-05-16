@@ -1,39 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Document</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      //bitcoin cost func
+      const costBtc = [55, 9, 8, 6, 7, 11, 10, 33];
 
-	<script type="text/javascript">
-		
-    const costBtc = [55,9, 8, 6, 7, 11, 10, 33];
+      function cost(array) {
+        let a = Math.min.apply(Math, array);
 
-         function cost( array ){
-           
-           
-           let a = Math.min.apply( Math, array );
-           
-            
-           let lowest = 0;
-           
-           
-           for (var i = 1; i < array.length; i++) {
-                    if (array[i] < array[lowest])
-                        lowest = i;
-                }
-           
-           let nextArr = array.slice(lowest, array.length);
-           let b =  Math.max.apply( Math, nextArr ); 
-           console.log(lowest)
-           console.log(nextArr)
-           return b - a;
-           
-         }
-     
+        let lowest = 0;
 
+        for (var i = 1; i < array.length; i++) {
+          if (array[i] < array[lowest]) lowest = i;
+        }
 
+        let nextArr = array.slice(lowest, array.length);
+        let b = Math.max.apply(Math, nextArr);
+        console.log(lowest);
+        console.log(nextArr);
+        return b - a;
+      }
 
-console.log(cost(costBtc))
-	</script>
+      console.log(cost(costBtc));
+    </script>
+  </body>
+</html>
