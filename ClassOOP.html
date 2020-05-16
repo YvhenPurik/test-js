@@ -1,55 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Document</title>
-</head>
-<body>
-	<script type="text/javascript">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      // Class and oop
+      class User {
+        constructor(name, id) {
+          this.name = name;
+          this.id = id;
+          this.avatar = 'Photo';
+        }
+        delitAvatar() {
+          this.avatar = null;
+        }
+      }
+      class Admin extends User {
+        constructor(name, id) {
+          super(name, id);
+          this.role = 'admin';
+        }
 
-	class User {
-		constructor(name, id){
-			  this.name = name;
-			  this.id = id;
-			  this.avatar = 'Photo'
-		}
-		delitAvatar(){
-			this.avatar = null;
-		}
-	}
-   class Admin extends User{
-        constructor(name, id){
-        	super(name, id)
-        	  this.role = "admin";    
-        	}
-	    	
-	     setId(id){
-           this.id = id;
-	      }
-	    
-	    }
-    let vasya = new User("Вася", 30);
-    let lena = new User("Лена", 32);
-    let adm = new Admin("Admin", 15);
+        setId(id) {
+          this.id = id;
+        }
+      }
+      let vasya = new User('Вася', 30);
+      let lena = new User('Лена', 32);
+      let adm = new Admin('Admin', 15);
 
-    adm.setId(4)
-    vasya.delitAvatar()
-    let arr = [1, 2, 3];
-    let obj ={
-    	dog:123,
-    	dog2:22,
-    	dog3:333
-    }
+      adm.setId(4);
+      vasya.delitAvatar();
+      let arr = [1, 2, 3];
+      let obj = {
+        dog: 123,
+        dog2: 22,
+        dog3: 333,
+      };
 
-    for (let key in obj) {
-      console.log(key ,obj[key])
-  }
+      for (let key in obj) {
+        console.log(key, obj[key]);
+      }
 
-    console.log(vasya);
-    console.log(lena);
-    console.log(adm);
-    console.log(arr);
-    // console.log(obj);
-	</script>
-</body>
+      console.log(vasya);
+      console.log(lena);
+      console.log(adm);
+      console.log(arr);
+      // console.log(obj);
+    </script>
+  </body>
 </html>
