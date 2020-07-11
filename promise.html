@@ -14,7 +14,11 @@
         }, 5000);
       });
 
-      promise.then(() => console.log(testSum));
+      promise
+        .then(() => console.log(testSum))
+        .catch((err) => {
+          console.log(err);
+        });
     </script>
   </body>
 </html>
