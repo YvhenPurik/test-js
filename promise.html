@@ -19,6 +19,15 @@
         .catch((err) => {
           console.log(err);
         });
+
+      let testSum2 = null;
+      let rrr = () => {
+        console.log(testSum2);
+      };
+      setTimeout(async () => {
+        testSum2 = 30;
+        await rrr();
+      }, 3000);
     </script>
   </body>
 </html>
