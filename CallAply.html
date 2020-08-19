@@ -1,29 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Document</title>
-</head>
-<body>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Document</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			let Car = {
+				name: 'cosmich',
+				whils: true,
+				color: 'any',
+				brand: 'any',
+			};
+			let newCar = {
+				name: 'jigul',
+				color: 'red',
+				move: function () {
+					console.log('move   ' + this.name);
+				},
+			};
 
-	<script type="text/javascript">
-		
-   let Car = {
-   	name:'cosmich',
-	whils:true,
-	color: 'any',
-	brand:'any',
-    
-	}
-	
-	let newCar = {
-	  name:'jigul',
-      color: 'red',
-      move:  function () {
-      	console.log('move   ' + this.name)
-      }
-	}
-
-	newCar.move.apply(Car)
-</script>
-	
+			newCar.move.apply(Car);
+		</script>
+	</body>
+</html>
